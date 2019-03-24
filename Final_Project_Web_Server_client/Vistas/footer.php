@@ -12,7 +12,7 @@
           <h5 class="mb-1">Registrate gratis</h5>
         </li>
         <li class="list-inline-item">
-          <a href="#!" class="btn btn-outline-white btn-rounded">Registrar</a>
+          <a href="registrar.php" class="btn btn-outline-white btn-rounded">Registrar</a>
           
         </li>
       </ul>

@@ -4,18 +4,18 @@
 
 class conectar{
 
-	protected $connect;
-	protected $db;
+	//protected $connect;
+	//protected $db;
 
 	public static function conexion(){
 
 
 		 		try {
 
-		 			$this->$connect = new PDO("mysql:local=localhost;dbname=pruebas","root","");
+		 			$connect = new PDO("mysql:local=localhost;dbname=proyectoawcs","root","");
 				    
-                    $this->$connect->query("SET NAMES 'utf8'");
-                    print 'Conexion exitosa';
+                    //$connect->query("SET NAMES 'utf8'");
+                    
                     
 				     return $connect;
 		 			
