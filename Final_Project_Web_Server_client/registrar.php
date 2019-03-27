@@ -6,10 +6,9 @@ echo '<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	  <script src="jquery-validate/dist/jquery.validate.min.js"></script>
       <script type="text/javascript" src="js/scripts.js"></script>'
 
-
-
-
  ?>
+
+<?php $titulo = 'Registrar'; ?>
 
 <div class="col-xl-12">
 	<form name="registro_form" method="post">

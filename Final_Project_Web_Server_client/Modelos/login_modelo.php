@@ -38,7 +38,7 @@ if (is_array($resultado)==true and count($resultado)==0) {
 		</script>";
 	} else{
 		$_SESSION["usuario"] = $_POST["usuario"];
-		header("Location:Vistas/Home_vista.php");
+		header('Location:../Vistas/Home_vista.php');
 	}
 }
 
