@@ -1,12 +1,13 @@
 <?php 
 session_start();
 require_once('../Vistas/header.php');
+$titulo = "Pagina Principal";
 if (isset($_SESSION["usuario"])) {
 
 	
 
 ?>
-<?php $titulo = "Pagina Principal"; ?>
+
 <h1>Hola!</h1><br/>
 <?php echo '<h2>'.$_SESSION["usuario"].'</h2>'; ?>
 <br/>
