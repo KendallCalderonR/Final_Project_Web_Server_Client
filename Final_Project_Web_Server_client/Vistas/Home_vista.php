@@ -12,6 +12,7 @@ if (isset($_SESSION["usuario"])) {
 <?php echo '<h2>'.$_SESSION["usuario"].'</h2>'; ?>
 <br/>
 
+<a href="../Vistas/libros_vista.php" class="">Libros</a>
 <a href="../Modelos/logout_modelo.php" class="">Salir</a>
 
 

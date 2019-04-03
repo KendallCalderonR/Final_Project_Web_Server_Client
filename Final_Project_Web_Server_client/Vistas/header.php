@@ -13,7 +13,7 @@
 	<link href="Public/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="Public/css/MyStyles.css">
 	
-	<title><?php echo $titulo; ?></title>
+	<title><?php $titulo; ?></title>
 </head>
 
 <body>

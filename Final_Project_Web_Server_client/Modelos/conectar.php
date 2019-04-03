@@ -14,7 +14,7 @@ class conectar{
 
 		 			$connect = new PDO("mysql:local=localhost;dbname=proyectoawcs","root","");
 				    
-                    //$connect->query("SET NAMES 'utf8'");
+                    $connect->query("SET NAMES 'utf8'");
                     
                     
 				     return $connect;
