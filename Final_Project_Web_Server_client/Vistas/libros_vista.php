@@ -33,22 +33,25 @@ $objeto = new libro_modelo();
 ?>
 	<tr class="registros">
 		<td valign="top" align="center" width="150">
-		<?php echo $libro["id_libro"];?>
+			<?php echo "<p class=\"id_libro\" >". $libro["id_libro"]."</p>";?>
 		</td>
 		<td valign="top" align="center" width="100">
-		<?php echo $libro["autor"];?>
+			<?php echo "<p class=\"autor_libro\" >" .$libro["autor"]."</p>";?>
 		</td>
 		<td valign="top" align="center" width="100">
-		<?php echo $libro["titulo"];?>
+			<?php echo "<p class=\"titulo_libro\" >". $libro["titulo"]."</p>";?>
 		</td>
 		<td valign="top" align="center" width="100">
-		<?php echo $libro["cantidad"];?>
+			<?php echo "<p class=\"cantidad_libro\" >". $libro["cantidad"]."</p>";?>
 		</td>
 		<td valign="top" align="center" width="250">
-		<?php echo $libro["resena"]; ?>
+			<?php echo "<p class=\"resena_libro\" width=\"250\">".$libro["resena"]."</p>"; ?>
 		</td>
 		<td valign="top" align="center" width="100">
-		<?php echo $libro["imagen"];?>
+			<?php echo "<img src= ../Public/imagenes/". $libro["imagen"]." width=\"150\" height=\"170\" >";?>
+		</td>
+		<td>
+			<?php echo "<input class=\"boton_libro\" type=\"button\" name\"prestamo\" value=\"Prestamo\"/>";  ?>
 		</td>
 	</tr>
 <?php
