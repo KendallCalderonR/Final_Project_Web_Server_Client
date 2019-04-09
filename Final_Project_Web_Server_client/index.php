@@ -1,12 +1,12 @@
 <?php
-
+//session_start();
 require_once("Modelos/conectar.php");
 
 require_once('Vistas/header.php');  
 
 ?>
 
-<?php $titulo = 'Ingreso al sistema'; ?>
+<?php $_SESSION['$titulo'] = 'Ingreso al sistema'; ?>
 
 <div class="col-xl-12">
 	<form name="log" action="Modelos/login_modelo.php" method="post">

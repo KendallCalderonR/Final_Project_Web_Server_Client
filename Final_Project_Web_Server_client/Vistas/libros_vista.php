@@ -2,7 +2,7 @@
 session_start();
 require_once('../Vistas/header.php');
 require_once('../Modelos/libro_modelo.php');
-$titulo = "Libros";
+$GLOBALS['$titulo'] = 'Libros';
 
 $objeto = new libro_modelo();
 

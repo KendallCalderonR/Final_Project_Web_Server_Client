@@ -1,5 +1,6 @@
 <?php 
-session_start();
+//session_start();
+$_SESSION['$titulo'] = 'Home';
 require_once('../Vistas/header.php');
 $titulo = "Pagina Principal";
 if (isset($_SESSION["usuario"])) {

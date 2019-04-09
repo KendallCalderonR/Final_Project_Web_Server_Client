@@ -8,7 +8,7 @@ echo '<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
  ?>
 
-<?php $titulo = 'Registrar'; ?>
+<?php $_SESSION['$titulo'] = 'Registrar'; ?>
 
 <div class="col-xl-12">
 	<form name="registro_form" method="post">

@@ -1,3 +1,6 @@
+<?php 
+	session_start() ;
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +16,7 @@
 	<link href="Public/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="Public/css/MyStyles.css">
 	
-	<title><?php $titulo; ?></title>
+	<title><?php echo $_SESSION['titulo']='Ingreso al sistema';?></title>
 </head>
 
 <body>
