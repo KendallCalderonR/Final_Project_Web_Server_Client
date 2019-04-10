@@ -31,7 +31,7 @@ $objeto = new libro_modelo();
 	$libros = $objeto->VerLibros();
 
  foreach ($libros as $libro) {
- 	$idLibro = 1;
+ 	$idLibro;
 ?>
 	<tr class="registros">
 		<td valign="top" align="center" width="150">
@@ -53,7 +53,7 @@ $objeto = new libro_modelo();
 			<?php echo "<img src= ../Public/imagenes/". $libro["imagen"]." width=\"150\" height=\"170\" >";?>
 		</td>
 		<td>
-			<?php echo "<input class=\"boton_libro\" id=$idLibro type=\"button\" name\"prestamo\" value=\"Prestamo\" onclick = \"verificarPrestamo();\"/>";  ?>
+			<?php echo "<input class=\"boton_libro\" id=\"".$libro["id_libro"]."\" type=\"button\" name\"prestamo\" value=\"Prestamo\" onclick = \"verificarPrestamo();\"/>";  ?>
 		</td>
 	</tr>
 <?php
