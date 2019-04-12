@@ -29,6 +29,7 @@ if (is_array($resultado)==true and count($resultado)==0) {
 	$sql->bindValue(2,$_POST['contrasena']);
 	$sql->execute();
 	$resultado=$sql->fetchAll();
+	$varId_Usuario = $resultado['id_usuario'];
 
 	if (is_array($resultado)==true and count($resultado)==0) {
 		
@@ -38,6 +39,7 @@ if (is_array($resultado)==true and count($resultado)==0) {
 		</script>";
 	} else{
 		$_SESSION["usuario"] = $_POST["usuario"];
+		$_SESSION["id_usuario"] = $varId_Usuario;
 		header('Location:../Vistas/Home_vista.php');
 	}
 }

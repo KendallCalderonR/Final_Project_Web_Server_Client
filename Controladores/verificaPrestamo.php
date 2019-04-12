@@ -14,4 +14,17 @@
 		 	
 		 	}
 			</script>";
+
+
+
+function ventanaLibro(){
+
+	echo "<script type=\"text/javascript\">
+			window.open(\"../Vistas/ejemplo.php\");
+		  </script>";
+}
+			
+
+
+
 	?>
