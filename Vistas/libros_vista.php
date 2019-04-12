@@ -53,7 +53,7 @@ $objeto = new libro_modelo();
 			<?php echo "<img src= ../Public/imagenes/". $libro["imagen"]." width=\"150\" height=\"170\" >";?>
 		</td>
 		<td>
-			<?php echo "<input class=\"boton_libro\" name=\"prestamo\" type=\"submit\" value=\"".$libro["id_libro"]."\"/>";  ?>
+			<?php echo "<input class=\"boton_libro\" name=\"prestamo\" id=\"".$libro["id_libro"]."\" type=\"submit\" value=\"".$libro["id_libro"]."\"/>";  ?>
 		</td>
 	</tr>
 <?php

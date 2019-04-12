@@ -10,8 +10,10 @@ if (isset($_SESSION["usuario"])) {
 ?>
 
 <h1>Hola!</h1><br/>
+
 <?php echo '<h2>'.$_SESSION["usuario"].'</h2>'; ?>
 <br/>
+
 
 <a href="../Vistas/libros_vista.php" class="">Libros</a>
 <a href="../Modelos/logout_modelo.php" class="">Salir</a>

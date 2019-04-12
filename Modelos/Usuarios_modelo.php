@@ -47,6 +47,18 @@ class Usuario extends conectar{
 
 }
 
+	public function ObtenerUsuarioPorUsuario($usuario){
+
+	$conectar = parent::conexion();
+	$sql='select * from usuario where usuario = ?';
+	$sql = $conectar->prepare($sql);
+	$sql->bindValue(1,$usuario);
+	$sql->execute();
+	$resultado=$sql->fetchAll();
+
+	return $resultado;
+	}
+
 
 }
  ?>

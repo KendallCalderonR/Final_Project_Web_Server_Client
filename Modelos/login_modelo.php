@@ -3,7 +3,7 @@ session_start();
 
 require_once("conectar.php");
 //include('Modelos/conectar.php');
-
+$varId_Usuario;
 $conectar = new conectar();
 $conn = $conectar->conexion();
 
@@ -29,7 +29,7 @@ if (is_array($resultado)==true and count($resultado)==0) {
 	$sql->bindValue(2,$_POST['contrasena']);
 	$sql->execute();
 	$resultado=$sql->fetchAll();
-	$varId_Usuario = $resultado['id_usuario'];
+	//$GLOBALS['varId_Usuario'] = $resultado[1];
 
 	if (is_array($resultado)==true and count($resultado)==0) {
 		
@@ -39,7 +39,8 @@ if (is_array($resultado)==true and count($resultado)==0) {
 		</script>";
 	} else{
 		$_SESSION["usuario"] = $_POST["usuario"];
-		$_SESSION["id_usuario"] = $varId_Usuario;
+		$_SESSION["id_usuario"] = $resultado[1]; //$GLOBALS['varId_Usuario'];
+
 		header('Location:../Vistas/Home_vista.php');
 	}
 }

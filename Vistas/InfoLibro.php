@@ -4,10 +4,23 @@ $variable_prestamo = $_POST['prestamo'] ;
 
 require_once('../Vistas/header.php');
 require_once('../Modelos/libro_modelo.php');
+require_once('../Controladores/IngresarPrestamo.php');
+require_once('../Modelos/Usuarios_modelo.php');
 require_once('../Controladores/verificaPrestamo.php');
 $GLOBALS['$titulo'] = 'Libros';
 
 $objeto = new libro_modelo();
+$usu = new Usuario();
+
+$dato = $_SESSION["usuario"];
+
+$usuarios = $usu->ObtenerUsuarioPorUsuario($dato);
+
+ foreach ($usuarios as $usuario) {
+ 	$usuario["id_usuario"];
+ }
+
+
 ?>
 
 <h1>Información</h1>
@@ -20,13 +33,15 @@ $objeto = new libro_modelo();
  foreach ($libros as $libro) {
 
  	//Variables del libro para prestamo
-echo 	$cantidad=$libro["cantidad"];echo '<br>';
-echo	$nuevaCantidad=$cantidad-1;echo '<br>';
-echo    $id_libro = $libro["id_libro"];echo '<br>';
-echo 	$fecha_prestamo= date("y-m-d");echo '<br>';
-echo 	$fecha_entrega= date("y-m-d",strtotime('+7 day',strtotime($fecha_prestamo)));echo '<br>';
-echo 	$estado = 1;echo '<br>';
-echo 	$usuario_id = $_SESSION["id_usuario"];echo '<br>';
+$cantidad=$libro["cantidad"];
+$nuevaCantidad=$cantidad-1;
+$id_libro = $libro["id_libro"];
+$fecha_prestamo= date("y-m-d");
+$fecha_entrega= date("y-m-d",strtotime('+7 day',strtotime($fecha_prestamo)));
+$estado = 1;
+$usuario_id = $usuario[0];
+
+//-------------------------------------------------------------------------------------
  	
 echo "<p class=\"id_libro\" >". $libro["id_libro"]."</p>";
 echo '<br>';
@@ -40,7 +55,8 @@ echo "<p class=\"resena_libro\" width=\"250\">".$libro["resena"]."</p>";
 echo '<br>';
 echo "<img src= ../Public/imagenes/". $libro["imagen"]." width=\"150\" height=\"170\" >";
 echo '<br>';
-echo "<input class=\"boton_libro\" name=\"prestamo\" type=\"button\" value=\"".$libro["id_libro"]."\"/>";
+echo "<input class=\"boton_libro\" name=\"prestamo\" type=\"button\" value=\"Prestamo\" 
+       onclick=\"CargarPrestamo();\" />";
  }
 echo '<br>';
 
