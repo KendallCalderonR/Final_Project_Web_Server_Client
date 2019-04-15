@@ -61,7 +61,7 @@ $objeto = new libro_modelo();
 ?>
 </table>
 </form>
-
+<a href="../Vistas/Home_vista.php" class="">Menu Principal</a>
 <?php 
 require_once('../Vistas/Footer.php');
 ?>
