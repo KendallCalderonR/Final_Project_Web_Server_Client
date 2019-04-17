@@ -120,11 +120,6 @@ $usuario_id = $usuario[0];
 
 <?php } ?>
 
-<a href="" class="">Libros</a>
-
-
-
-
 <?php 
 require_once('../Vistas/Footer.php');
  ?>
