@@ -2,8 +2,8 @@
 
 //if (isset($_POST['prestamo'])) {
 
-$variable_prestamo = $_POST['prestamo'] ;
-
+//$variable_prestamo = $_POST['prestamo'] ;
+$variable_prestamo = $_GET['id_libro'];
 
 
 require_once('../Vistas/header.php');

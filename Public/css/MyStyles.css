@@ -1,3 +1,4 @@
+/*
 .view {
     background: url("https://ep01.epimg.net/cultura/imagenes/2018/08/15/babelia/1534351691_997591_1534352892_noticia_normal_recorte1.jpg")no-repeat center center;
     background-size: cover;
@@ -20,4 +21,83 @@ header,
 .view {
   
   height: 79%;
+}
+*/
+
+/*PARA EL HEADER*/
+.navbar {
+    display: none;
+  }
+
+.navbar-expand-lg {
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+}
+
+  .navbar-dark .navbar-brand {
+  color: white;
+}
+
+.navbar-dark .navbar-toggler {
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-collapse {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.navbar-expand-sm .navbar-nav {
+    -ms-flex-direction: row;
+        flex-direction: row;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  border: 0;
+}
+
+
+/*PARA EL FOOTER*/
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 5px;
 }
