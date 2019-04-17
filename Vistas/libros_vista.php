@@ -8,27 +8,36 @@ $GLOBALS['$titulo'] = 'Libros';
 $objeto = new libro_modelo();
 
 ?>
-
-<h3>Libros</h3>
-
-
+<h1 class="h1_libros">Libros</h1>
 <?php
 
 	$libros = $objeto->VerLibros();
 
+    echo '<div class="container">';
+    echo '<div class="row">';
+        //<div class="col-xs-12 col-sm-6 col-xl-4">
 	 foreach ($libros as $libro) {
 
-	echo '<div class= "libro_articulo">';
-	echo '<h4>'.$libro["titulo"].'</h4><br>';
-	echo '<img src="../Public/imagenes/'.$libro['imagen'].'" width="150" height="170"><br>';
-	echo '<a href="InfoLibro.php?id_libro='.$libro["id_libro"].' "title="Información"><img src="../Public/imagenes/info.png" width="30px" border="0"></a>';
-	echo '</div>';
+	echo '  
+			<div class="card text-center " style="width: 15rem;">
+  			<img src="../Public/imagenes/'.$libro['imagen'].'" class="card-img-top" alt="...">
+  			<div class="card-body">
+    		<h5 class="card-title">'.$libro["titulo"].'</h5>
+   		    <a href="InfoLibro.php?id_libro='.$libro["id_libro"].'" class="btn btn-dark">Información</a>
+  			</div>
+			</div>';
 
  }
- 	
+
+    echo '</div>';
+    echo '</div>';
+	
 ?>
 
-<a href="../Vistas/Home_vista.php" class="">Menu Principal</a>
+
+
+<!--<a href="../Vistas/Home_vista.php" class="">Menu Principal</a>-->
+
 <?php 
 require_once('../Vistas/Footer.php');
 ?>

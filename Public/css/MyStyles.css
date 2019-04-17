@@ -21,3 +21,16 @@ header,
   
   height: 79%;
 }
+
+
+
+/*Para libros vistas*/
+
+.h1_libros{
+	text-align: center;
+}
+
+.nav-paginacion{
+	text-align: center;
+	align-items: center;
+}
