@@ -39,6 +39,7 @@ if (is_array($resultado)==true and count($resultado)==0) {
 		</script>";
 	} else{
 		$_SESSION["usuario"] = $_POST["usuario"];
+		$_SESSION["Nombre_Usuario"] =  $resultado[1]." ".$resultado[2];
 		$_SESSION["id_usuario"] = $resultado[1]; //$GLOBALS['varId_Usuario'];
 
 		header('Location:../Vistas/Home_vista.php');

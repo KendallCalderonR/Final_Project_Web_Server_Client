@@ -1,7 +1,7 @@
 <?php 
 //session_start();
 
-//require_once("conectar.php");
+require_once("conectar.php");
 //include('Modelos/conectar.php');
 
 class Usuario extends conectar{
