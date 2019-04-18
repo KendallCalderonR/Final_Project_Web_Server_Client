@@ -16,6 +16,30 @@ return $resultado;
 	}
 
 
+public function CargarLibro($id_libro){
+
+$conectar = parent::conexion();
+
+$sql='select * from libro where id_libro = ?;';
+$sql = $conectar->prepare($sql);
+$sql->bindValue(1,$id_libro);
+$sql->execute();
+$resultado=$sql->fetchAll();
+
+return $resultado;
+	}
+
+
+public function RestaCantidad($id_libro){
+
+$conectar = parent::conexion();
+
+$sql='update libro SET cantidad = cantidad-1 WHERE id_libro = ?;';
+$sql = $conectar->prepare($sql);
+$sql->bindValue(1,$_POST['id_libro']);
+$sql->execute();
+
+}
 
 public function PrestarLibro($fecha_prestamo,$fecha_entrega,$estado,$id_usuario,$id_libro){
 
@@ -31,41 +55,8 @@ $sql->bindValue(4,$_POST['id_usuario']);
 $sql->bindValue(5,$_POST['id_libro']);
 $sql->execute();
 
-
-	}
-
-
-
-public function CargarLibro($id_libro){
-
-$conectar = parent::conexion();
-
-$sql='select * from libro where id_libro = ?;';
-$sql = $conectar->prepare($sql);
-$sql->bindValue(1,$id_libro);
-$sql->execute();
-$resultado=$sql->fetchAll();
-
-return $resultado;
-	}
-
-
-public function ActualizarExistencia($id_libro, $cantidad){
-
-$conectar = parent::conexion();
-
-$sql='update libro set "cantidad" = ? where id_libro = ?;';
-$sql = $conectar->prepare($sql);
-$sql->bindValue(1,$cantidad);
-$sql->bindValue(2,$id_libro);
-$sql->execute();
-$resultado=$sql->fetchAll();
-
-return $resultado;
 	}
 }
-
-
 
 
  ?>

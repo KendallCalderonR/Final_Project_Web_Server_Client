@@ -15,6 +15,8 @@ $libro = new libro_modelo();
 
         
       $libro->PrestarLibro($fecha_prestamo,$fecha_entrega,$estado,$id_usuario,$id_libro);
+
+      $libro->RestaCantidad($id_libro);
         
         echo "<script type='text/javascript'>
 		alert('Prestamo exitoso');
