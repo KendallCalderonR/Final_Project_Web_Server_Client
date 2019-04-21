@@ -46,6 +46,11 @@ foreach ($usuarios as $usuario) {
 	$prestamos = $objeto->VerPrestamosActivos($usuarioActual);
 
  ?>
+
+
+
+
+ 
     <div class="container">
     <table class="table">
 		  <thead>
@@ -58,6 +63,9 @@ foreach ($usuarios as $usuario) {
 		  </thead>
 
 <?php 
+
+
+
 			
 	foreach ($prestamos as $prestamo) {
 
@@ -67,7 +75,7 @@ foreach ($usuarios as $usuario) {
 				      <td>'.$prestamo['fecha_prestamo'].'</td>
 				      <td>'.$prestamo['fecha_entrega'].'</td>
 				      <td>'.$prestamo['estado'].'</td>
-				      <td><input class="btn btn-dark" type="button" id="devuelvePrestamo" value="Devolver Prestamo"></input></td>
+				      <td><input class="btn btn-dark" type="button" id="devuelvePrestamo" onclick="Devolver(' . $prestamo['id_prestamo'] . ', ' . $prestamo['id_libro'] . ')" value="Devolver Prestamo"></input></td>
 		    		</tr>';		
 	 }
 	 	echo '</tbody>';
