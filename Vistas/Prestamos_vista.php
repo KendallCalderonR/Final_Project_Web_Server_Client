@@ -58,23 +58,21 @@ foreach ($usuarios as $usuario) {
 		  </thead>
 
 <?php 
+			
+	foreach ($prestamos as $prestamo) {
 
-	 foreach ($prestamos as $prestamo) {
-
-foreach ($prestamos as $prestamos) {
-
-echo '  <tbody>
-				<tr>
-			      <th scope="row">'.$prestamo['titulo'].'</th>
-			      <td>'.$prestamo['fecha_prestamo'].'</td>
-			      <td>'.$prestamo['fecha_entrega'].'</td>
-			      <td>'.$prestamo['estado'].'</td>
-			      <td><input class="btn btn-dark" type="button" id="devuelvePrestamo" value="Devolver Prestamo"></input></td>
-	    		</tr>';		
- }
- 	echo '</tbody>';
- 	echo '</table>';
-    echo '</div>';
+	echo '  <tbody>
+					<tr>
+				      <th scope="row">'.$prestamo['titulo'].'</th>
+				      <td>'.$prestamo['fecha_prestamo'].'</td>
+				      <td>'.$prestamo['fecha_entrega'].'</td>
+				      <td>'.$prestamo['estado'].'</td>
+				      <td><input class="btn btn-dark" type="button" id="devuelvePrestamo" value="Devolver Prestamo"></input></td>
+		    		</tr>';		
+	 }
+	 	echo '</tbody>';
+	 	echo '</table>';
+	    echo '</div>';
 
 ?>
 <form name="form_devolver" method="post">
@@ -84,7 +82,6 @@ echo '  <tbody>
 </form>
 
 	
-?>
 
 <?php
 echo '<script type="text/javascript" src="../Public/js/devolver.js"></script>';
