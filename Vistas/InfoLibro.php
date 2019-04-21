@@ -121,5 +121,5 @@ $usuario_id = $usuario[0];
 <?php } ?>
 
 <?php 
-require_once('../Vistas/Footer.php');
+require_once('../Vistas/Footer_aftersesion.php');
  ?>

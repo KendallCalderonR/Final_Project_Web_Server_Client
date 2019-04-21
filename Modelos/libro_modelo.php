@@ -1,62 +1,75 @@
-<?php 
+<?php
 require_once("conectar.php");
 
-class libro_modelo extends conectar{
+class libro_modelo extends conectar
+{
 
-public function VerLibros(){
+   public function VerLibros()
+   {
 
-$conectar = parent::conexion();
+      $conectar = parent::conexion();
 
-$sql='select * from libro';
-$sql = $conectar->prepare($sql);
-$sql->execute();
-$resultado=$sql->fetchAll();
+      $sql = 'select * from libro';
+      $sql = $conectar->prepare($sql);
+      $sql->execute();
+      $resultado = $sql->fetchAll();
 
-return $resultado;
-	}
-
-
-public function CargarLibro($id_libro){
-
-$conectar = parent::conexion();
-
-$sql='select * from libro where id_libro = ?;';
-$sql = $conectar->prepare($sql);
-$sql->bindValue(1,$id_libro);
-$sql->execute();
-$resultado=$sql->fetchAll();
-
-return $resultado;
-	}
+      return $resultado;
+   }
 
 
-public function RestaCantidad($id_libro){
+   public function CargarLibro($id_libro)
+   {
 
-$conectar = parent::conexion();
+      $conectar = parent::conexion();
 
-$sql='update libro SET cantidad = cantidad-1 WHERE id_libro = ?;';
-$sql = $conectar->prepare($sql);
-$sql->bindValue(1,$_POST['id_libro']);
-$sql->execute();
+      $sql = 'select * from libro where id_libro = ?;';
+      $sql = $conectar->prepare($sql);
+      $sql->bindValue(1, $id_libro);
+      $sql->execute();
+      $resultado = $sql->fetchAll();
 
+      return $resultado;
+   }
+
+
+   public function RestaCantidad($id_libro)
+   {
+
+      $conectar = parent::conexion();
+
+      $sql = 'update libro SET cantidad = cantidad-1 WHERE id_libro = ?;';
+      $sql = $conectar->prepare($sql);
+      $sql->bindValue(1, $_POST['id_libro']);
+      $sql->execute();
+   }
+
+   public function PrestarLibro($fecha_prestamo, $fecha_entrega, $estado, $id_usuario, $id_libro)
+   {
+
+      $conectar = parent::conexion();
+
+      $sql = 'insert into prestamos (id_prestamo,fecha_prestamo,fecha_entrega,estado,usuario_id_usuario,libro_id_libro) values (null,?,?,?,?,?)';
+      $sql = $conectar->prepare($sql);
+
+      $sql->bindValue(1, $_POST['fecha_prestamo']);
+      $sql->bindValue(2, $_POST['fecha_entrega']);
+      $sql->bindValue(3, $_POST['estado']);
+      $sql->bindValue(4, $_POST['id_usuario']);
+      $sql->bindValue(5, $_POST['id_libro']);
+      $sql->execute();
+   }
+
+   public function DevolverLibro($id_prestamo, $id_libro)
+   {
+      $conectar = parent::conexion();
+      $sql = 'UPDATE libro SET cantidad = cantidad+1 WHERE id_libro = ?;';
+      $sql = $conectar->prepare($sql);
+      $sql->bindValue(1, $id_libro);
+      $sql->execute();
+      $sql = 'UPDATE prestamos SET estado = 3 WHERE id_prestamo = ?;';
+      $sql = $conectar->prepare($sql);
+      $sql->bindValue(1, $id_prestamo);
+      $sql->execute();
+   }
 }
-
-public function PrestarLibro($fecha_prestamo,$fecha_entrega,$estado,$id_usuario,$id_libro){
-
-$conectar = parent::conexion();
-
-$sql='insert into prestamos (id_prestamo,fecha_prestamo,fecha_entrega,estado,usuario_id_usuario,libro_id_libro) values (null,?,?,?,?,?)';
-$sql = $conectar->prepare($sql);
-
-$sql->bindValue(1,$_POST['fecha_prestamo']);
-$sql->bindValue(2,$_POST['fecha_entrega']);
-$sql->bindValue(3,$_POST['estado']);
-$sql->bindValue(4,$_POST['id_usuario']);
-$sql->bindValue(5,$_POST['id_libro']);
-$sql->execute();
-
-	}
-}
-
-
- ?>

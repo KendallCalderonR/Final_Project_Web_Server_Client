@@ -1,9 +1,10 @@
-<?php 
+<?php
 
 require_once('../Vistas/header.php');
 require_once('../Modelos/prestamo_modelo.php');
 require_once('../Controladores/verificaPrestamo.php');
 require_once('../Modelos/Usuarios_modelo.php');
+require_once('../Controladores/DevolverPrestamo.php');
 
 $GLOBALS['$titulo'] = 'Libros';
 
@@ -15,9 +16,9 @@ $dato = $_SESSION["usuario"];
 
 $usuarios = $usu->ObtenerUsuarioPorUsuario($dato);
 
- foreach ($usuarios as $usuario) {
- 	$usuario["id_usuario"];
- }
+foreach ($usuarios as $usuario) {
+   $usuario["id_usuario"];
+}
 
 ?>
 <form method="post" name="filtro">
@@ -36,13 +37,15 @@ $usuarios = $usu->ObtenerUsuarioPorUsuario($dato);
 
 
 <h1 class="h1_libros">Prestamos</h1>
+
+
 <?php
 
- $usuarioActual = $usuario[0];
+	$usuarioActual = $usuario[0];
 
 	$prestamos = $objeto->VerPrestamosActivos($usuarioActual);
 
-    ?>
+ ?>
     <div class="container">
     <table class="table">
 		  <thead>
@@ -58,7 +61,9 @@ $usuarios = $usu->ObtenerUsuarioPorUsuario($dato);
 
 	 foreach ($prestamos as $prestamo) {
 
-	echo '  <tbody>
+foreach ($prestamos as $prestamos) {
+
+echo '  <tbody>
 				<tr>
 			      <th scope="row">'.$prestamo['titulo'].'</th>
 			      <td>'.$prestamo['fecha_prestamo'].'</td>
@@ -70,8 +75,18 @@ $usuarios = $usu->ObtenerUsuarioPorUsuario($dato);
  	echo '</tbody>';
  	echo '</table>';
     echo '</div>';
+
+?>
+<form name="form_devolver" method="post">
+   <input type="hidden" name="id_libro">
+   <input type="hidden" name="id_prestamo">
+   <input type="hidden" name="enviar" value="si">
+</form>
+
+	
 ?>
 
-<?php 
-require_once('../Vistas/Footer.php');
+<?php
+echo '<script type="text/javascript" src="../Public/js/devolver.js"></script>';
+require_once('../Vistas/footer.php');
 ?>

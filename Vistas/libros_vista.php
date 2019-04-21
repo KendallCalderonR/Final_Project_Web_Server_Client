@@ -39,5 +39,5 @@ $objeto = new libro_modelo();
 <!--<a href="../Vistas/Home_vista.php" class="">Menu Principal</a>-->
 
 <?php 
-require_once('../Vistas/Footer.php');
+require_once('../Vistas/Footer_aftersesion.php');
 ?>
