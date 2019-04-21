@@ -21,7 +21,7 @@ foreach ($usuarios as $usuario) {
 }
 
 ?>
-<form method="post" name="filtro">
+<!--<form method="post" name="filtro">
 <div class="container">
 	<div class="form-group">
 	    <label for="Select_filtro">Filtrar:</label>
@@ -33,7 +33,7 @@ foreach ($usuarios as $usuario) {
 	    </select>
   	</div>	
 </div>
-</form>
+</form>-->
 
 
 <h1 class="h1_libros">Prestamos</h1>
