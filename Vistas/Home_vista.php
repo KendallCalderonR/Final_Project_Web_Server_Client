@@ -23,7 +23,7 @@ foreach ($usuariodatos as $usuario) {
   	<h1 class="display-4">¡Hola!,<?php echo $nombreCompleto; ?></h1>
   	<p class="lead">Nos alegra tenerte de regreso, muchas gracias por utilizar nuestros servicios</p>
   	<hr class="my-4">
-  	<p>No esperes mas y comienza a leer nuestros libros.</p>
+  	<p>No esperes más y comienza a leer nuestros libros.</p>
     <a class="btn btn-dark btn-lg" href="../Vistas/libros_vista.php" role="button">Libros</a>
 </div>
 
@@ -35,5 +35,5 @@ foreach ($usuariodatos as $usuario) {
 		</script>";
 }
 
-require_once('../Vistas/Footer.php');
+require_once('../Vistas/Footer_aftersesion.php');
 ?>

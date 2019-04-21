@@ -18,7 +18,7 @@ if (is_array($resultado)==true and count($resultado)==0) {
 	
 	echo "<script type='text/javascript'>
 	alert('El usuario ".$_POST["usuario"]." no existe en la base de datos');
-	window.location= \"index.php\";
+	window.location.href = 'http://localhost:8080/Proyecto/Final_Project_Web_Server_Client/';
 	</script>";
 }else{
 
