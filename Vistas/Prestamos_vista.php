@@ -5,6 +5,7 @@ require_once('../Modelos/prestamo_modelo.php');
 require_once('../Controladores/verificaPrestamo.php');
 require_once('../Modelos/Usuarios_modelo.php');
 require_once('../Controladores/DevolverPrestamo.php');
+require_once('../Controladores/PrestamoControladorFiltro.php');
 
 $GLOBALS['$titulo'] = 'Libros';
 
@@ -21,7 +22,7 @@ foreach ($usuarios as $usuario) {
 }
 
 ?>
-<!--<form method="post" name="filtro">
+<!--<form method="post" name="filtro" action="PrestamoControladorFiltro.php">
 <div class="container">
 	<div class="form-group">
 	    <label for="Select_filtro">Filtrar:</label>
