@@ -25,6 +25,7 @@ foreach ($usuariodatos as $usuario) {
   	<hr class="my-4">
   	<p>No esperes más y comienza a leer nuestros libros.</p>
     <a class="btn btn-dark btn-lg" href="../Vistas/libros_vista.php" role="button">Libros</a>
+    <a class="btn btn-dark btn-lg" href="../Vistas/Prestamos_vista.php" role="button">Historial de Prestamos</a>
 </div>
 
 <?php 
