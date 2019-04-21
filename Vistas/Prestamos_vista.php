@@ -20,6 +20,21 @@ $usuarios = $usu->ObtenerUsuarioPorUsuario($dato);
  }
 
 ?>
+<form method="post" name="filtro">
+<div class="container">
+	<div class="form-group">
+	    <label for="Select_filtro">Filtrar:</label>
+	    <select class="form-control" id="Select_filtro" name="Select_filtro">
+	      <option value="1">Historial Completo</option>
+	      <option value="2">Prestamos Activos</option>
+	      <option value="3">Prestamos Vencidos</option>
+	      <option value="4">Prestamos Devueltos</option>
+	    </select>
+  	</div>	
+</div>
+</form>
+
+
 <h1 class="h1_libros">Prestamos</h1>
 <?php
 
@@ -27,40 +42,35 @@ $usuarios = $usu->ObtenerUsuarioPorUsuario($dato);
 
 	$prestamos = $objeto->VerPrestamosActivos($usuarioActual);
 
-    echo '<div class="container">';
-    echo '<div class="row">';
-    echo '<div class="card text-center " style="width: 15rem;">Libro</div>
-    <div class="card text-center " style="width: 15rem;">Fecha de Solicitud</div>
-    <div class="card text-center " style="width: 15rem;">Fecha de Entrega</div>
-    <div class="card text-center " style="width: 15rem;">Estado</div>
-    ';
-        //<div class="col-xs-12 col-sm-6 col-xl-4">
-	 foreach ($prestamos as $prestamos) {
+    ?>
+    <div class="container">
+    <table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">Libro</th>
+		      <th scope="col">Fecha de solicitud</th>
+		      <th scope="col">Fecha de prestamo</th>
+		      <th scope="col">Estado</th>
+		    </tr>
+		  </thead>
 
-	echo '  
-			<div class="card text-center " style="width: 15rem;">
-			'.$prestamos['titulo'].'</div>
-			<div class="card text-center " style="width: 15rem;">
-			'.$prestamos['fecha_prestamo'].'</div>
-			<div class="card text-center " style="width: 15rem;">
-			'.$prestamos['fecha_entrega'].'</div>
-			<div class="card text-center " style="width: 15rem;">
-			'.$prestamos['estado'].'</div>
-			<input type="button" id="devuelvePrestamo" value="Devolver Prestamo"></input>
-			'
-			;
+<?php 
 
-	echo "<br><br>";		
+	 foreach ($prestamos as $prestamo) {
+
+	echo '  <tbody>
+				<tr>
+			      <th scope="row">'.$prestamo['titulo'].'</th>
+			      <td>'.$prestamo['fecha_prestamo'].'</td>
+			      <td>'.$prestamo['fecha_entrega'].'</td>
+			      <td>'.$prestamo['estado'].'</td>
+			      <td><input class="btn btn-dark" type="button" id="devuelvePrestamo" value="Devolver Prestamo"></input></td>
+	    		</tr>';		
  }
-
+ 	echo '</tbody>';
+ 	echo '</table>';
     echo '</div>';
-    echo '</div>';
-	
 ?>
-
-
-
-<!--<a href="../Vistas/Home_vista.php" class="">Menu Principal</a>-->
 
 <?php 
 require_once('../Vistas/Footer.php');
