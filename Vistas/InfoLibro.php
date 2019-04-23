@@ -8,8 +8,11 @@ require_once('../Modelos/libro_modelo.php');
 require_once('../Controladores/IngresarPrestamo.php');
 require_once('../Modelos/Usuarios_modelo.php');
 require_once('../Controladores/verificaPrestamo.php');
+require_once('../Modelos/prestamo_modelo.php');
+
 $GLOBALS['$titulo'] = 'Libros';
 
+$prestamo = new prestamo_modelo();
 $objeto = new libro_modelo();
 $usu = new Usuario();
 
@@ -17,17 +20,15 @@ $dato = $_SESSION["usuario"];
 
 $usuarios = $usu->ObtenerUsuarioPorUsuario($dato);
 
+
+
+
+
  foreach ($usuarios as $usuario) {
  	$usuario["id_usuario"];
  }
 
 
-?>
-
-
-
-
-<?php
 
  $libros = $objeto->CargarLibro($variable_prestamo);
 
@@ -82,11 +83,30 @@ $usuario_id = $usuario[0];
 				    <textarea class="form-control" id="resena" readonly="true" rows="10"><?php echo $libro["resena"]?></textarea>
 					
 				</div>
+				<?php  
+				if($libro["cantidad"] <= 0){
+					
+					echo '<div class=" form-group  ">
+						<div class="btn-block">
+						<input class="btn btn-danger btn-lg btn-block"name="submit" type="submit" value="Libro Agotado" disabled="true"/>
+					    </div>';
+	
+				}else{
+	     			/*$prestamosDelUsuario = $prestamo->VerPrestamosDeUsuario($libro["id_libro"],$usuario[0]);
+					if($prestamosDelUsuario>0){
+								echo '<div class=" form-group  ">
+							<div class="btn-block">
+						    	<input class="btn btn-danger btn-lg btn-block"name="submit" type="submit" value="Ya tienes este libro'.$prestamosDelUsuario.'" disabled="true"/>
+						    </div>';
+					}else{*/
 
-				<div class=" form-group  ">
-					<div class="btn-block">
-				    	<input class="btn btn-dark btn-lg btn-block"name="submit" type="submit" value="Prestamo"/>
-				    </div>
+							echo '<div class=" form-group  ">
+							<div class="btn-block">
+						    	<input class="btn btn-dark btn-lg btn-block"name="submit" type="submit" value="Prestamo"/>
+						    </div>';
+					}
+				//}	
+				?>    
 				    <div class="btn-block">
 				    	<a href="../Vistas/libros_vista.php" role="button" aria-pressed="true" class="btn btn-dark btn-lg btn-block">Volver</a>
 				    </div>

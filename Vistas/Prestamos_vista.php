@@ -5,7 +5,7 @@ require_once('../Modelos/prestamo_modelo.php');
 require_once('../Controladores/verificaPrestamo.php');
 require_once('../Modelos/Usuarios_modelo.php');
 require_once('../Controladores/DevolverPrestamo.php');
-require_once('../Controladores/PrestamoControladorFiltro.php');
+
 
 $GLOBALS['$titulo'] = 'Libros';
 
@@ -22,20 +22,6 @@ foreach ($usuarios as $usuario) {
 }
 
 ?>
-<!--<form method="post" name="filtro" action="PrestamoControladorFiltro.php">
-<div class="container">
-	<div class="form-group">
-	    <label for="Select_filtro">Filtrar:</label>
-	    <select class="form-control" id="Select_filtro" name="Select_filtro">
-	      <option value="1">Historial Completo</option>
-	      <option value="2">Prestamos Activos</option>
-	      <option value="3">Prestamos Vencidos</option>
-	      <option value="4">Prestamos Devueltos</option>
-	    </select>
-  	</div>	
-</div>
-</form>-->
-
 
 <h1 class="h1_libros">Prestamos</h1>
 
@@ -45,13 +31,10 @@ foreach ($usuarios as $usuario) {
 	$usuarioActual = $usuario[0];
 
 	$prestamos = $objeto->VerPrestamosActivos($usuarioActual);
+	
+
 
  ?>
-
-
-
-
- 
     <div class="container">
     <table class="table">
 		  <thead>
@@ -62,12 +45,8 @@ foreach ($usuarios as $usuario) {
 		      <th scope="col">Estado</th>
 		    </tr>
 		  </thead>
-
 <?php 
-
-
-
-			
+		
 	foreach ($prestamos as $prestamo) {
 
 	echo '  <tbody>
