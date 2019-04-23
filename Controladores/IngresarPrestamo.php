@@ -7,8 +7,6 @@ $libro = new libro_modelo();
 
    /*valido que se haya enviado el formulario para crear el objeto y llamar el metodo PrestarLibro() para insertar el registro*/
     if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
-    
-      //if ($yaExistePrestamo = 0) {
 
               /*declaro las variable*/    
             $fecha_prestamo=$_POST["fecha_prestamo"];
@@ -23,9 +21,7 @@ $libro = new libro_modelo();
           $libro->RestaCantidad($id_libro);
             
             echo "<script type='text/javascript'>alert('Prestamo exitoso');</script>";
-     // } else {
-    //   echo "<script type='text/javascript'> alert('Ya tienes este libro en prestamo');</script>";
-    //  }
+
     }//cierre del if de validacion de envio de formulario
 
  ?>

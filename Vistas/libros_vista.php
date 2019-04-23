@@ -2,7 +2,7 @@
 
 require_once('../Vistas/header.php');
 require_once('../Modelos/libro_modelo.php');
-require_once('../Controladores/verificaPrestamo.php');
+
 $GLOBALS['$titulo'] = 'Libros';
 
 $objeto = new libro_modelo();
@@ -15,7 +15,6 @@ $objeto = new libro_modelo();
 
     echo '<div class="container">';
     echo '<div class="row row justify-content-md-center">';
-        //<div class="col-xs-12 col-sm-6 col-xl-4">
 	 foreach ($libros as $libro) {
 
 	echo '  

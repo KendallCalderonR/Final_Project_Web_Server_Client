@@ -1,33 +1,26 @@
 <?php 
 
-//session_start();
+	class conectar{
+			//Creacion de clase conexion
+		public static function conexion(){
 
-class conectar{
+			 		try {
 
-	//protected $connect;
-	//protected $db;
+			 			$connect = new PDO("mysql:local=localhost;dbname=proyectoawcs","root","");
+					    //para evitar problemas con caracteres.
+	                    $connect->query("SET NAMES 'utf8'");
+	                                      
+					     return $connect;
+			 			
+			 		} catch (Exception $e) {
 
-	public static function conexion(){
+			 			print "¡Error!: " . $e->getMessage() . "<br/>";
+			            die();  
+			 			
+			 		}
+			 
 
-
-		 		try {
-
-		 			$connect = new PDO("mysql:local=localhost;dbname=proyectoawcs","root","");
-				    
-                    $connect->query("SET NAMES 'utf8'");
-                    
-                    
-				     return $connect;
-		 			
-		 		} catch (Exception $e) {
-
-		 			print "¡Error!: " . $e->getMessage() . "<br/>";
-		            die();  
-		 			
-		 		}
-		 
-
-		 }
-}
+			 }
+	}//Cierre clase conexion
 
 ?>

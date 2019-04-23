@@ -2,7 +2,6 @@
 
 require_once('../Vistas/header.php');
 require_once('../Modelos/prestamo_modelo.php');
-require_once('../Controladores/verificaPrestamo.php');
 require_once('../Modelos/Usuarios_modelo.php');
 require_once('../Controladores/DevolverPrestamo.php');
 

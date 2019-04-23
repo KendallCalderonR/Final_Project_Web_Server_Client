@@ -2,33 +2,25 @@
 
 $variable_prestamo = $_GET['id_libro'];
 
-
 require_once('../Vistas/header.php');
 require_once('../Modelos/libro_modelo.php');
 require_once('../Controladores/IngresarPrestamo.php');
 require_once('../Modelos/Usuarios_modelo.php');
-require_once('../Controladores/verificaPrestamo.php');
 require_once('../Modelos/prestamo_modelo.php');
 
 $GLOBALS['$titulo'] = 'Libros';
-
+//creacion de objetos.------------------------------------
 $prestamo = new prestamo_modelo();
 $objeto = new libro_modelo();
 $usu = new Usuario();
-
+//---------------------------------------------------------
 $dato = $_SESSION["usuario"];
 
 $usuarios = $usu->ObtenerUsuarioPorUsuario($dato);
 
-
-
-
-
  foreach ($usuarios as $usuario) {
  	$usuario["id_usuario"];
  }
-
-
 
  $libros = $objeto->CargarLibro($variable_prestamo);
 
@@ -37,7 +29,9 @@ $usuarios = $usu->ObtenerUsuarioPorUsuario($dato);
 $cantidad=$libro["cantidad"];
 $nuevaCantidad= $cantidad-1;
 $id_libro = $libro["id_libro"];
+$fechaactual = date("y-m-d");
 $fecha_prestamo= date("y-m-d");
+//$fecha_prestamo= date("y-m-d",strtotime('-1 day',strtotime($fechaactual)));
 $fecha_entrega= date("y-m-d",strtotime('+7 day',strtotime($fecha_prestamo)));
 $estado = 1;
 $usuario_id = $usuario[0];

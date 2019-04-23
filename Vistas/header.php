@@ -19,7 +19,7 @@
 	<link href="Public/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="Public/css/MyStyles.css">
 	
-	<title><?php echo $_SESSION['titulo']='Ingreso al sistema';?></title>
+	<title><?php echo $_SESSION['titulo']='AWSCO';?></title>
 </head>
 
 <body>
